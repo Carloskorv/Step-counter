@@ -1,0 +1,51 @@
+input.onGesture(Gesture.Shake, function () {
+    steg += 1
+    led.stopAnimation()
+})
+let steg = 0
+let stegmål = 5
+basic.forever(function () {
+    if (steg == stegmål) {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            # . . . #
+            . # # # .
+            `)
+        basic.showLeds(`
+            . # # # .
+            . # . . #
+            . # # # .
+            . # . . #
+            . # # # .
+            `)
+        basic.showLeds(`
+            . # # # .
+            . # . . #
+            . # # # .
+            . # . # .
+            . # . . #
+            `)
+        basic.showLeds(`
+            . # # # .
+            . # . # .
+            . # # # .
+            . # . # .
+            . # . # .
+            `)
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            # . . . #
+            . # # # .
+            `)
+    }
+    if (steg < stegmål) {
+        basic.showNumber(steg)
+    }
+    if (steg > stegmål) {
+        basic.showNumber(steg)
+    }
+})
